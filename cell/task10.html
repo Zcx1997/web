@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+    <title></title>
+    <link rel="stylesheet" href="task10.css">
+    <script type="text/javascript">
+        window.onload = function(){
+            var myTab = document.getElementById("tab");
+            var myUl = myTab.getElementsByTagName("ul")[0];
+            var myLi = myUl.getElementsByTagName("li");
+            var myDiv = myTab.getElementsByTagName("div");
+
+            for(var i = 0; i<myLi.length;i++){
+                myLi[i].index = i;
+                myLi[i].onclick = function(){
+                    for(var j = 0; j < myLi.length; j++){
+                        myLi[j].className="off";
+                        myDiv[j].className = "hide";
+                    }
+                    this.className = "on";
+                    myDiv[this.index].className = "show";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div id="background">
+    <div id = "tab">
+        <ul>
+            <li class="off">moblie</li>
+            <li class="on">ipad</li>
+            <li class="off">pc</li>
+        </ul>
+        <div id="firstPage" class="hide">
+            <table border="1" id="cell">
+                <tr>
+                    <td>row 1, cell 1</td>
+                </tr>
+                <tr>
+                    <td>row 1, cell 1</td>
+                </tr>
+                <tr>
+                    <td>row 1, cell 1</td>
+                </tr>
+                <tr>
+                    <td>row 1, cell 1</td>
+                </tr>
+            </table>
+        </div>
+        <div id="secondPage" class="show">
+            <table border="1" id="cell_1">
+                <tr>
+                    <td>row 1, cell 1</td>
+                    <td>row 1, cell 2</td>
+                </tr>
+                <tr>
+                    <td>row 2, cell 1</td>
+                    <td>row 2, cell 2</td>
+                </tr>
+            </table>
+        </div>
+        <div id="thirdPage" class = "hide">
+            <table border="1" id="cell_2">
+                <tr>
+                    <td>row 1, cell 1</td>
+                    <td>row 1, cell 2</td>
+                    <td>row 1, cell 2</td>
+                    <td>row 1, cell 2</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
